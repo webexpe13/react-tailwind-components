@@ -6,6 +6,7 @@ export interface IAuthor {
   designation?: string;
   bio?: string;
   social?: iNavSocials[];
+  twitterHandle?: string;
 }
 
 export interface IArticleHeaderData {

@@ -18,6 +18,12 @@ const Text = ({ children, color, textAlign = TextAlign.NONE, className, title = 
     const computeComponent = () => {
         let ui = <></>;
 
+        const para = <p
+                    className={combineClasses(`font-medium mb-3 text-[16px] leading-relaxed`, className)}
+                    style={{ color: color, textAlign: textAlign }} id={id}>
+                    {children}
+                </p>
+
         if (title) {
             ui = (
                 <h1
@@ -35,13 +41,7 @@ const Text = ({ children, color, textAlign = TextAlign.NONE, className, title = 
                 </h2>
             )
         } else if (p) {
-            ui = (
-                <p
-                    className={combineClasses(`font-regular mb-3 text-lg leading-relaxed`, className)}
-                    style={{ color: color, textAlign: textAlign }} id={id}>
-                    {children}
-                </p>
-            )
+            ui = (para)
         } else if (quote) {
             ui = (
                 <blockquote
@@ -51,13 +51,7 @@ const Text = ({ children, color, textAlign = TextAlign.NONE, className, title = 
                 </blockquote>
             )
         } else {
-            ui = (
-                <p
-                    className={combineClasses(`font-regular mb-3 text-lg leading-relaxed`, className)}
-                    style={{ color: color, textAlign: textAlign }} id={id}>
-                    {children}
-                </p>
-            )
+            ui = (para)
         }
         return ui;
     }

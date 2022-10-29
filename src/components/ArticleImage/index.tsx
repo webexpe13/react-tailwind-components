@@ -12,7 +12,7 @@ interface IArticleImage {
 }
 const Image = ({ src, caption, size = ImageSize.DEFAULT, alt, className }: IArticleImage) => {
     return (
-        <div className={combineClasses(classes.article_image, classes.article_image__wrapper, className, classes['size_' + size], 'display-block mx-auto my-5')}>
+        <figure className={combineClasses(classes.article_image, classes.article_image__wrapper, className, classes['size_' + size], 'block mx-auto my-[5]')}>
             <Zoom>
                 <img src={removePublicFromPath(src)} alt={alt} width="100%" className={combineClasses('block')} />
             </Zoom>
@@ -20,7 +20,7 @@ const Image = ({ src, caption, size = ImageSize.DEFAULT, alt, className }: IArti
                 caption &&
                 <p className={combineClasses(classes.article_image__caption, "mb-0 mt-2 text-sm w-full text-center")}>{caption}</p>
             }
-        </div>
+        </figure>
     )
 }
 

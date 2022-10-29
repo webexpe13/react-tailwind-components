@@ -136,7 +136,7 @@ export const transformImagePaths = removePublicFromPath;
  * @param PAGE_SEO : iSEO
  * @returns SEO config
  */
-export const CREATE_BLOG_SEO_CONFIG = (PAGE_SEO: iSEO, WEBSITE_URL: string, WEBSITE_NAME: string, CURRENT_PATH: string) => {
+export const CREATE_BLOG_SEO_CONFIG = (PAGE_SEO: iSEO, WEBSITE_NAME: string, CURRENT_PATH: string) => {
   // set url and path
   const origin =
     typeof window !== "undefined" && window.location.origin
